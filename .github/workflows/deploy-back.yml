@@ -29,7 +29,11 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.ECR_REPO_NAME }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --build-arg $PORT=${{ secrets.DB_PORT }} --build-arg $DB=${{ secrets.DB_HOST }} .
+          docker build \
+          -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+          --build-arg PORT=${{ secrets.DB_PORT }} \
+          --build-arg DB=${{ secrets.DB_HOST }} \
+          --no-cache .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
