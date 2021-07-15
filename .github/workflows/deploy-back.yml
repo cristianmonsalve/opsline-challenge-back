@@ -33,7 +33,7 @@ jobs:
           -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
           --build-arg PORT=${{ secrets.DB_PORT }} \
           --build-arg DB=${{ secrets.DB_HOST }} \
-          --no-cache -f ./Dockerfile .
+          --no-cache -f .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
