@@ -1,10 +1,21 @@
 
-    {
-      "essential": true,
-      "memory": 512,
-      "name": "worker",
-      "cpu": 2,
-      "image": "143283514385.dkr.ecr.us-east-1.amazonaws.com/api:latest",
-      "environment": []
-    }
   
+    [
+        {
+            "volumesFrom": [],
+            "memory": 512,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "mountPoints": [],
+            "name": "api-container",
+            "environment": [],
+            "image": "143283514385.dkr.ecr.us-east-1.amazonaws.com/api:latest",
+            "cpu": 2
+        }
+    ]
