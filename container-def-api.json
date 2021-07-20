@@ -4,7 +4,7 @@
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "api-container",
+            
             "image": "143283514385.dkr.ecr.us-east-1.amazonaws.com/api:latest",
             "portMappings": [
                 {
