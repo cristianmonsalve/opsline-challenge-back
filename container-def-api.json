@@ -1,7 +1,6 @@
 {
     "family": "api-family",
     "executionRoleArn": "arn:aws:iam::143283514385:role/opsline-task-execution-role",
-    "networkMode": "awsvpc",
     "containerDefinitions": [
         {
             "name": "api-container",
